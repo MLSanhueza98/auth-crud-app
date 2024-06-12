@@ -1,8 +1,19 @@
-import { BeforeInsert, BeforeUpdate, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { ProductImage } from "./productImage.entity";
+
+import { 
+    Column,
+    Entity,
+    OneToMany,
+    BeforeUpdate,
+    BeforeInsert,
+    PrimaryGeneratedColumn
+} from "typeorm";
+
 
 
 @Entity()
 export class Product {
+
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
@@ -70,6 +81,11 @@ export class Product {
             .replaceAll("'",' ')          
     }
 
-    // tags, images
+    @OneToMany( 
+        () => ProductImage,
+        productImage => productImage.product,
+        { cascade: true, eager: true }
+     )
+    images?: ProductImage[]
 
 }
