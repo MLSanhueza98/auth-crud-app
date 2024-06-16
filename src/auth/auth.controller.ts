@@ -1,5 +1,6 @@
 import { Controller, Get, Post, Body, UseGuards, } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
+import { ApiTags } from '@nestjs/swagger';
 
 // Services
 import { AuthService } from './auth.service';
@@ -18,6 +19,7 @@ import { UserRolGuard } from './guards/user-rol.guard';
 import { ValidRoles } from './strategies/interfaces';
 
 
+@ApiTags('Auth')
 @Controller('auth')
 export class AuthController {
   

@@ -21,3 +21,5 @@
 
 7.- Levantar: ``` yarn start:dev```.
 
+8.- Documentacion endpoints
+``` http://localhost:3000/api ```.

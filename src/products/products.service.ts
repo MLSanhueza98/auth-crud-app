@@ -5,11 +5,11 @@ import { DataSource, Repository } from 'typeorm';
 
 import { validate as isUUID } from 'uuid'
 
-import { CreateProductDto } from './dto/create-product.dto';
-import { UpdateProductDto } from './dto/update-product.dto';
+import { CreateProductDto, UpdateProductDto } from './dto/';
+import { Product, ProductImage } from './entities/index';
+
 import { PaginationDto } from '../common/dtos/pagination.dto';
 
-import { Product, ProductImage } from './entities/index';
 import { User } from 'src/auth/entities/user.entity';
 
 
