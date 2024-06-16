@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, UseGuards, Req, SetMetadata, } from '@nestjs/common';
+import { Controller, Get, Post, Body, UseGuards, } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 
 // Services
@@ -17,11 +17,12 @@ import { User } from './entities/user.entity';
 import { UserRolGuard } from './guards/user-rol.guard';
 import { ValidRoles } from './strategies/interfaces';
 
+
 @Controller('auth')
 export class AuthController {
   
   constructor(
-    private readonly authService: AuthService
+    private readonly authService: AuthService,
   ) {}
 
   @Post('register')
@@ -33,6 +34,16 @@ export class AuthController {
   loginUser(@Body() loginUserDto: LoginUserDto) {
     return this.authService.login(loginUserDto);
   }
+
+  @Get('check-status')
+  @Auth()
+  checkAuthStatus(
+    @GetUser() user: User,
+  ) {
+    return this.authService.checkStatus( user )
+  }
+
+
 
   @Get('private')
   @UseGuards( AuthGuard(), UserRolGuard )

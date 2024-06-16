@@ -67,9 +67,16 @@ export class AuthService {
     }
   }
 
-
   private getJwtToken( payload: JwtPayload ) {
     return this.jwtService.sign( payload )
+  }
+
+
+  async checkStatus(user: User ) {
+    return {
+      ...user,
+      token: this.getJwtToken({ id: user.id })
+    }
   }
 
   private handleErrorsDb( error: any ): never {
