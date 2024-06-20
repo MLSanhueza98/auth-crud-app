@@ -23,3 +23,7 @@
 
 8.- Documentacion endpoints
 ``` http://localhost:3000/api ```.
+
+
+
+** this project contains a complete and functional Auth module. **
