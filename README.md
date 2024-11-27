@@ -5,23 +5,23 @@
 
 # Auth-CRUD-app
 
-1.- Clonar proyecto.
+1.- Clone the project.
 
-2.- ``` yarn install ```.
+2.- Run ``` yarn install ```.
 
-3.- Clonar el archivo ```.env.template``` y renombrarlo a ```.env```.
+3.- Clone the ```.env.template``` file and rename it to ```.env```.
 
-4.- Cambiar las variables de entorno.
+4.- Change the environment variables
 
-5.- Levantar la base de datos 
+5.- Start the database with
 ``` docker-compose up-d ```
 
-6.- Ejecutar el seed
+6.- Run the seed by going to
 ``` http://localhost:3000/api/seed ```
 
-7.- Levantar: ``` yarn start:dev```.
+7.- Start the project in development mode with: ``` yarn start:dev```.
 
-8.- Documentacion endpoints
+8.- Endpoint documentation at: 
 ``` http://localhost:3000/api ```.
 
 
